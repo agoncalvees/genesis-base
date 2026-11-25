@@ -15,3 +15,7 @@ Produto criado com `bun run new` (sem módulos) e implementado inteiramente no C
 - Biome ignora `design/evidence/` (relatório gerado pelo `design:verify` quebrava `bun run check`; o Aceiro teve o mesmo problema).
 
 Pendente: `FileDrop` ainda usa locale e textos padrão em inglês.
+
+## 24/11/2026 · protocolo de pitch
+
+Feedback do responsável: o app era bonito, mas o jurado não entendia a dor sem explorar. Adicionados `docs/product/PITCH-PROTOCOL.md` (dor com número, critérios → evidência, estrutura obrigatória do app, pitch de 3 min, teste dos 5 segundos), modelos de brief e roteiro, `PitchTour`/`usePitchMode` (`?demo=1`, passador de slides) e `firstViewport` no `design:verify`. Aplicado no Senha: abertura com público, dor (1h03), promessa e ação; tour de 5 passos que executa a demo; bloco "Como funciona" e próximos passos; roteiro de 3 min. Senha: 124 testes, 11 e2e, `design:verify` 1017/1017.
