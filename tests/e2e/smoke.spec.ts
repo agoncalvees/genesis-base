@@ -6,9 +6,7 @@ test("serves the neutral home page", async ({ page }) => {
 
 	expect(response?.status()).toBe(200);
 	await expect(page).toHaveTitle(appConfig.name);
-	await expect(
-		page.getByRole("heading", { name: appConfig.name }),
-	).toBeVisible();
+	await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 });
 
 test("hydrates the smoke route without page errors", async ({ page }) => {

@@ -11,4 +11,6 @@ bun run new -- --name "Nome" --slug nome --dir /caminho/absoluto/nome [--with ai
 - Fontes não vêm instaladas: escolha no DESIGN.md e rode `bun add` do pacote indicado pelo `design:build`.
 - Para começar de uma identidade pronta: `bun run design:apply example/aceiro`.
 
+O produto nasce com a estrutura padrão de história (`src/features/story/content.ts` para preencher, `src/routes/index.tsx` com as seções marcadas, `tests/e2e/story.spec.ts` e `design/fidelity.json` com `firstViewport`).
+
 Depois: siga [AGENTS.md](../AGENTS.md) e o [protocolo](design/CREATIVE-DIRECTION.md). Deploy na Vercel: `bun run build` (preset Vercel); localmente, `bun run build:local` e `bun run serve`.

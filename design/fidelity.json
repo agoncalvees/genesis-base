@@ -1,0 +1,22 @@
+{
+	"url": "http://127.0.0.1:3000/",
+	"viewports": [360, 768, 1440],
+	"waitFor": "main[data-hydrated=true]",
+	"firstViewport": [
+		"[data-story=problem]",
+		"[data-story=promise]",
+		"[data-story=action]"
+	],
+	"probes": [
+		{
+			"name": "Fundo",
+			"selector": "body",
+			"expect": { "background-color": "{background}" }
+		},
+		{
+			"name": "Título",
+			"selector": "[data-hero-title]",
+			"expect": { "font-family": "{typeface-display}" }
+		}
+	]
+}
