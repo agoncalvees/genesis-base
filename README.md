@@ -1,5 +1,7 @@
 # Genesis Base
 
+Laboratório, ensaios e histórico: [Genesis Lab](https://github.com/agoncalvees/genesis).
+
 Fundação enxuta para transformar um tema desconhecido numa experiência digital de alto nível. Processo primeiro: protocolo de direção artística, DESIGN.md validado, verificação de fidelidade no navegador. Código mínimo: scaffold, motor de design, primitivas de comportamento e módulos opcionais.
 
 ## Comece aqui
