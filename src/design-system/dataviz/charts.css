@@ -1,0 +1,112 @@
+.ds-chart {
+	min-inline-size: 0;
+	position: relative;
+}
+
+.ds-chart svg {
+	display: block;
+	inline-size: 100%;
+	block-size: auto;
+}
+
+[data-chart-label] {
+	color: var(--data-axis);
+	font: 500 calc(var(--text-base) * 0.75) / 1.2 var(--typeface-body);
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+.ds-trend-chart svg {
+	min-block-size: 10rem;
+}
+
+.ds-trend-labels {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+}
+
+.ds-trend-labels span {
+	position: absolute;
+	white-space: nowrap;
+	visibility: hidden;
+	max-inline-size: calc(100% - 12px);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ds-bar-labels > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	gap: 0.5rem;
+	block-size: 3rem;
+	padding: 0.25rem 7.5% 0;
+}
+
+.ds-bar-labels {
+	position: relative;
+	pointer-events: none;
+}
+
+.ds-bar-labels span {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ds-bar-chart:has(.ds-bar-labels) svg {
+	position: absolute;
+	inset: 0;
+	block-size: 100%;
+}
+
+.ds-chart-grid {
+	fill: none;
+	stroke: var(--data-grid);
+	stroke-width: 1;
+	vector-effect: non-scaling-stroke;
+}
+
+.ds-chart-line {
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.ds-chart-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: calc(var(--spacing) * 3);
+	color: var(--data-axis);
+	font-family: var(--typeface-body);
+}
+
+.ds-chart-legend li {
+	display: inline-flex;
+	align-items: center;
+	gap: calc(var(--spacing) * 2);
+}
+
+.ds-chart-legend span {
+	inline-size: 0.7em;
+	block-size: 0.7em;
+}
+
+/* Sparkline path draw: only when motion is allowed; still profiles resolve to 0 ms. */
+@media (prefers-reduced-motion: no-preference) {
+	.ds-chart-draw {
+		vector-effect: none;
+		stroke-dasharray: 1;
+		animation: ds-chart-draw var(--duration-showcase) var(--ease-enter) both;
+	}
+}
+
+@keyframes ds-chart-draw {
+	from {
+		stroke-dashoffset: 1;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}

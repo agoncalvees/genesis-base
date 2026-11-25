@@ -1,0 +1,64 @@
+@keyframes ds-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes ds-slide-progress {
+	from {
+		transform: translateX(calc(-100% * var(--progress-direction, 1)));
+	}
+	to {
+		transform: translateX(calc(300% * var(--progress-direction, 1)));
+	}
+}
+
+@keyframes ds-tab-indicator {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+.ds-progress-indeterminate {
+	margin-inline: auto;
+	width: calc(100% / 3);
+}
+
+.ds-progress-indeterminate:dir(rtl) {
+	--progress-direction: -1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.ds-fade-in,
+	.ds-expandable[open] > div {
+		animation: ds-fade-in var(--enter-duration, var(--duration-fast))
+			var(--ease-enter) var(--enter-delay, 0ms) both;
+	}
+
+	.ds-progress-indeterminate {
+		margin-inline: 0;
+		animation: ds-slide-progress calc(var(--duration-showcase) * 3) linear
+			infinite;
+	}
+
+	.ds-animated-tabs [role="tab"][data-active]::after {
+		animation: ds-tab-indicator var(--duration-fast) var(--ease-enter) both;
+	}
+}
+
+.ds-animated-tabs [role="tab"][data-active]::after {
+	content: "";
+	position: absolute;
+	inset-inline: calc(var(--spacing) * 3);
+	inset-block-end: calc(var(--spacing) * 0.8);
+	height: 2px;
+	border-radius: var(--radius-pill);
+	background: currentColor;
+	pointer-events: none;
+}

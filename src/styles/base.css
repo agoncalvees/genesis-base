@@ -1,0 +1,120 @@
+@import "tailwindcss" source("../");
+@import "../design-system/tokens/base.css";
+@import "../design-system/themes/product.css";
+
+/* Expose semantic tokens to Tailwind utilities (bg-surface, text-muted, ...). */
+@theme inline {
+	--color-background: var(--background);
+	--color-surface: var(--surface);
+	--color-surface-raised: var(--surface-raised);
+	--color-foreground: var(--foreground);
+	--color-muted: var(--muted);
+	--color-border: var(--border);
+	--color-primary: var(--primary);
+	--color-on-primary: var(--on-primary);
+	--color-accent: var(--accent);
+	--color-on-accent: var(--on-accent);
+	--color-control-border: var(--control-border);
+	--color-dialog-scrim: var(--dialog-scrim);
+	--color-panel-divider: var(--panel-divider);
+	--color-panel-raised: var(--panel-tint, var(--surface-raised));
+	--color-panel-surface: var(--panel-tint, var(--surface));
+	--color-panel-slot: var(--panel-tint, transparent);
+	--color-focus: var(--focus);
+	--color-success: var(--success);
+	--color-on-success: var(--on-success);
+	--color-warning: var(--warning);
+	--color-on-warning: var(--on-warning);
+	--color-danger: var(--danger);
+	--color-on-danger: var(--on-danger);
+	--color-info: var(--info);
+	--color-on-info: var(--on-info);
+	--font-display: var(--typeface-display);
+	--font-body: var(--typeface-body);
+	--font-mono: var(--typeface-mono);
+	--spacing: calc(var(--space-unit) * var(--density));
+	--spacing-control-sm: max(
+		var(--target-min),
+		calc(var(--control-height) * var(--density) * 0.8)
+	);
+	--spacing-control: max(
+		var(--target-min),
+		calc(var(--control-height) * var(--density))
+	);
+	--spacing-control-lg: max(
+		var(--target-min),
+		calc(var(--control-height) * var(--density) * 1.2)
+	);
+	--radius-ds-sm: var(--radius-sm);
+	--radius-ds-md: var(--radius-md);
+	--radius-ds-lg: var(--radius-lg);
+	--radius-control: var(--radius-control);
+	--radius-pill: var(--radius-pill);
+	--shadow-ds-md: var(--shadow-md);
+	--shadow-panel-flat: var(--panel-shadow-flat);
+	--shadow-panel-sm: var(--panel-shadow-sm);
+	--shadow-panel-md: var(--panel-shadow-md);
+	--shadow-panel-lg: var(--panel-shadow-lg);
+	--ease-standard: var(--ease-standard);
+	--ease-enter: var(--ease-enter);
+	--ease-exit: var(--ease-exit);
+	--font-weight-ds-display: var(--display-weight);
+	--font-weight-ds-heading: var(--heading-weight);
+	--tracking-display: var(--display-tracking);
+	--font-metric: var(--metric-typeface);
+	--text-ds-xs: calc(var(--text-base) * 0.75);
+	--text-ds-xs--line-height: calc(4 / 3);
+	--text-ds-sm: calc(var(--text-base) * 0.875);
+	--text-ds-sm--line-height: calc(10 / 7);
+	--text-ds-base: var(--text-base);
+	--text-ds-base--line-height: 1.5;
+	--text-ds-lg: calc(var(--text-base) * var(--type-scale) * 1.125);
+	--text-ds-lg--line-height: calc(14 / 9);
+	--text-ds-xl: calc(var(--text-base) * var(--type-scale) * 1.25);
+	--text-ds-xl--line-height: 1.4;
+	--text-ds-2xl: calc(
+		var(--text-base) *
+		var(--type-scale) *
+		var(--type-scale) *
+		1.5
+	);
+	--text-ds-2xl--line-height: calc(4 / 3);
+	--text-ds-3xl: calc(
+		var(--text-base) *
+		var(--type-scale) *
+		var(--type-scale) *
+		1.875
+	);
+	--text-ds-3xl--line-height: 1.2;
+	--text-ds-4xl: calc(
+		var(--text-base) *
+		var(--type-scale) *
+		var(--type-scale) *
+		var(--type-scale) *
+		2.25
+	);
+	--text-ds-4xl--line-height: calc(10 / 9);
+}
+
+body {
+	background: var(--background);
+}
+
+body,
+[data-world],
+[data-theme] {
+	color: var(--foreground);
+	font-family: var(--typeface-body);
+	font-size: var(--text-base);
+}
+
+:focus-visible {
+	outline: var(--focus-ring-width) solid var(--focus);
+	outline-offset: var(--focus-ring-offset);
+}
+
+@utility panel {
+	border-style: solid;
+	border-width: var(--panel-border-width);
+	border-color: var(--border);
+}

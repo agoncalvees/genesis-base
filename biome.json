@@ -1,0 +1,29 @@
+{
+	"markdown": {
+		"formatter": {
+			"enabled": false
+		}
+	},
+	"files": {
+		"includes": [
+			"**",
+			"!!src/routeTree.gen.ts",
+			"!!dist",
+			"!!.output",
+			"!!test-results",
+			"!!playwright-report",
+			"!!convex/_generated",
+			"!!.impeccable"
+		]
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	}
+}

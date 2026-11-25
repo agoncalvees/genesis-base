@@ -1,0 +1,45 @@
+/* Escalas compartilhadas. Cada identidade define a unidade e a densidade. */
+:root {
+	--content-max: 72rem;
+	/* Comprimento de linha legível para texto corrido (editorial). */
+	--measure: 65ch;
+	--focus-ring-width: 2px;
+	--focus-ring-offset: 2px;
+	--target-min: 24px;
+	--radius-pill: 9999px;
+}
+
+:root,
+[data-theme],
+[data-world] {
+	--spacing: calc(var(--space-unit) * var(--density));
+}
+
+[data-theme="light"] {
+	color-scheme: light;
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root,
+	[data-world],
+	[data-theme] {
+		--duration-instant: 0ms;
+		--duration-fast: 0ms;
+		--duration-normal: 0ms;
+		--duration-slow: 0ms;
+		--duration-showcase: 0ms;
+		--motion-intensity: 0;
+		--spring-stiffness: 0;
+		--spring-damping: 0;
+		--spring-mass: 0;
+		--delay-instant: 0ms;
+		--delay-fast: 0ms;
+		--delay-normal: 0ms;
+		--delay-slow: 0ms;
+		--delay-showcase: 0ms;
+	}
+}

@@ -1,0 +1,57 @@
+{
+	"url": "http://127.0.0.1:3000/",
+	"viewports": [360, 768, 1440],
+	"waitFor": "main",
+	"probes": [
+		{
+			"name": "Fundo carvão",
+			"selector": "body",
+			"expect": { "background-color": "{background}", "color": "{foreground}" }
+		},
+		{
+			"name": "Manchete serifada",
+			"selector": "[data-hero-title]",
+			"expect": { "font-family": "{typeface-display}", "font-weight": "400" }
+		},
+		{
+			"name": "Manchete grande (desktop)",
+			"selector": "[data-hero-title]",
+			"viewports": [1440],
+			"expect": { "font-size": ">= 80px" }
+		},
+		{
+			"name": "Palavra-sinal",
+			"selector": "[data-signal-word]",
+			"expect": { "color": "{--ember}", "font-style": "italic" }
+		},
+		{
+			"name": "Leituras mono tabulares",
+			"selector": "[data-reading]",
+			"all": true,
+			"expect": {
+				"font-family": "{typeface-mono}",
+				"font-variant-numeric": "~tabular-nums"
+			}
+		},
+		{
+			"name": "Rótulos condensados",
+			"selector": "[data-label]",
+			"all": true,
+			"expect": {
+				"font-family": "{typeface-body}",
+				"font-stretch": "<= 87.5%",
+				"text-transform": "uppercase"
+			}
+		},
+		{
+			"name": "Ação de ignição",
+			"selector": "[data-action=ignite]",
+			"expect": { "background-color": "{--ember}", "border-radius": "<= 4px" }
+		},
+		{
+			"name": "Mapa sem moldura",
+			"selector": "[data-map]",
+			"expect": { "border-radius": "= 0px" }
+		}
+	]
+}

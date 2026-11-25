@@ -1,0 +1,62 @@
+.ds-file-drop {
+	border: max(2px, var(--border-width)) dashed var(--control-border);
+	border-radius: var(--radius-lg);
+	background: var(--surface);
+}
+
+.ds-file-drop[data-dragging] {
+	border-color: var(--primary);
+	background: var(--surface-raised);
+}
+
+.ds-stream-cursor {
+	display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.ds-stream-cursor[data-motion] {
+		display: inline-block;
+		inline-size: 0.5em;
+		block-size: 1em;
+		margin-inline-start: 0.1em;
+		vertical-align: text-bottom;
+		background: currentColor;
+		animation: ds-stream-cursor calc(var(--duration-showcase) * 2) steps(1)
+			infinite;
+	}
+}
+
+@keyframes ds-stream-cursor {
+	50% {
+		opacity: 0;
+	}
+}
+
+.ds-resizable {
+	display: grid;
+	min-inline-size: 0;
+	grid-template-columns:
+		minmax(0, var(--panel-start)) var(--target-min)
+		minmax(0, 1fr);
+}
+
+.ds-resizable-separator {
+	display: grid;
+	place-items: center;
+	cursor: col-resize;
+	touch-action: none;
+}
+
+.ds-resizable-separator::before {
+	content: "";
+	inline-size: var(--border-width, 1px);
+	min-inline-size: 1px;
+	block-size: 100%;
+	background: var(--control-border);
+}
+
+.ds-resizable-separator:hover::before,
+.ds-resizable-separator:focus-visible::before {
+	inline-size: 3px;
+	background: var(--primary);
+}
