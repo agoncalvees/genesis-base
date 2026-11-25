@@ -38,8 +38,8 @@ const clamp = (value: number) => Math.min(100, Math.max(0, value));
 /**
  * Headless before/after comparison: `after` is clipped over `before` and the
  * split is dragged directly on the surface or moved with the keyboard.
- * No text, color, frame or aspect ratio is imposed — size comes from the
- * container, and `--compare` (0–100%) is exposed for styling.
+ * No text, color, frame or aspect ratio is imposed — height comes from the
+ * `before` content (or the container), and `--compare` (0–100%) is exposed.
  */
 export function CompareMask({
 	before,
@@ -129,7 +129,8 @@ export function CompareMask({
 			onPointerUp={() => setDragging(false)}
 			onPointerCancel={() => setDragging(false)}
 		>
-			<div style={{ position: "absolute", inset: 0 }}>{before}</div>
+			{/* `before` stays in flow so the comparison takes its height from content. */}
+			<div style={{ position: "relative" }}>{before}</div>
 			<div
 				data-compare-after=""
 				style={{

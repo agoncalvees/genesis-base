@@ -13,7 +13,8 @@
 			"!!test-results",
 			"!!playwright-report",
 			"!!convex/_generated",
-			"!!.impeccable"
+			"!!.impeccable",
+			"!!design/evidence"
 		]
 	},
 	"vcs": {

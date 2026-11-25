@@ -42,7 +42,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	const language = useRouterState({
-		select: (state) => state.matches.at(-1)?.staticData.language ?? "en",
+		select: (state) => state.matches.at(-1)?.staticData.language ?? "pt-BR",
 	});
 	return (
 		<html lang={language}>

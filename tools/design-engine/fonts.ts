@@ -29,7 +29,7 @@ export const fonts: Record<
 	"Bricolage Grotesque Variable": {
 		package: "@fontsource-variable/bricolage-grotesque",
 		license: "OFL-1.1",
-		imports: ["@fontsource-variable/bricolage-grotesque"],
+		imports: ["@fontsource-variable/bricolage-grotesque/wdth.css"],
 	},
 	"Figtree Variable": {
 		package: "@fontsource-variable/figtree",
