@@ -22,6 +22,11 @@ export interface FidelitySpec {
 	viewports?: number[];
 	/** Selector awaited before probing (after fonts load). */
 	waitFor?: string;
+	/**
+	 * Selectors that must be visible without scrolling at every viewport
+	 * (pitch protocol: problem, promise and action on the first screen).
+	 */
+	firstViewport?: string[];
 	/** Optional interaction states: click/press selectors before probing. */
 	states?: { name: string; actions: { click?: string; press?: string }[] }[];
 	probes: Probe[];

@@ -11,6 +11,7 @@ Motivação: no ISOTERMA o motor garantiu tokens, mas o CSS autoral desviou da e
   "url": "http://127.0.0.1:3000/",
   "viewports": [360, 768, 1440],
   "waitFor": "main",
+  "firstViewport": ["[data-story=problem]", "[data-story=promise]", "[data-story=action]"],
   "states": [{ "name": "resultado", "actions": [{ "click": "button[data-action=run]" }] }],
   "probes": [
     { "name": "Manchete", "selector": "h1", "expect": { "font-family": "{typeface-display}", "font-size": ">= 64px" }, "viewports": [1440] },
@@ -20,6 +21,8 @@ Motivação: no ISOTERMA o motor garantiu tokens, mas o CSS autoral desviou da e
   ]
 }
 ```
+
+`firstViewport` lista elementos que precisam estar inteiros na primeira dobra em todos os tamanhos (ver [PITCH-PROTOCOL](../product/PITCH-PROTOCOL.md)).
 
 Valores esperados:
 - `{token}` — token normalizado do DESIGN.md (`foreground`, `typeface-display`, `radius-control`…; ver tabela em [DESIGN-ENGINE](DESIGN-ENGINE.md)).

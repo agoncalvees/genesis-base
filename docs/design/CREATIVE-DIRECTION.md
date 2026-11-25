@@ -6,7 +6,7 @@ Protocolo obrigatório para qualquer experiência construída com o Genesis. A d
 
 | # | Passo | Saída verificável | Tempo |
 |---|---|---|---|
-| 1 | **Problema e público.** Quem usa, onde, com qual conhecimento, em que momento, e o que precisa sentir/entender em 30 s. | 5 linhas em `docs/product/PRODUCT-BRIEF.md` | 5 min |
+| 1 | **Problema e público.** Siga o [PITCH-PROTOCOL](../product/PITCH-PROTOCOL.md): quem sofre, dor com número, one-liner, critérios → evidência. | `PRODUCT-BRIEF.md` preenchido | 10 min |
 | 2 | **Mecanismo tecnológico central.** O que o sistema faz que o usuário não faria sozinho (simular, classificar, otimizar, comparar, prever, conectar). A tela principal deve **mostrar o mecanismo funcionando**, não descrevê-lo. | 1 frase: "o usuário vê X transformar Y em Z" | 5 min |
 | 3 | **Até três referências concretas.** Peças específicas (uma página, uma infografia, um objeto, um material), de domínios diferentes, cada uma com **uma** lição registrada. Pelo menos uma fora do mundo do software (impressão, cartografia, sinalização, instrumentos, arquitetura, cinema). | Tabela referência → lição → onde aplicar | 10 min |
 | 4 | **Direção artística.** Metáfora de mundo em uma frase ("caderno de campo ao entardecer", "sala de controle de 1970", "bula de remédio"), três atributos e três antiatributos, material dominante, uma cor que só aparece para o que importa. | Seção *Direção* do DESIGN.md | 10 min |
@@ -14,7 +14,7 @@ Protocolo obrigatório para qualquer experiência construída com o Genesis. A d
 | 6 | **DESIGN.md.** Tokens no front matter + seções de arte (ver [modelo](DESIGN-TEMPLATE.md)). `bun run design:lint` e `design:build`. Escreva `design/fidelity.json` com 5–10 regras que **não podem** divergir. | Lint 0; `fidelity.json` | 10 min |
 | 7 | **Implementação.** Comece pelo mecanismo/momento-assinatura, depois o entorno. Escolha recursos pelo [Experience Registry](EXPERIENCES.md); use primitivas do Genesis só para comportamento (foco, teclado, diálogos). | Tela funcionando | — |
 | 8 | **Comparar com o conceito.** `bun run design:verify <url>` (estilos computados, fontes carregadas, overflow, capturas 360/768/1440) e inspeção lado a lado com o conceito. | `design/evidence/` | 5 min |
-| 9 | **Refinar antes de entregar.** Uma rodada obrigatória: corrija as três maiores divergências de composição/hierarquia, depois detalhes (estados, foco, reduced motion). Registre o que mudou. | Capturas antes/depois no STATUS | 15 min |
+| 9 | **Refinar antes de entregar.** Teste dos 5 segundos na captura da primeira tela (para quem? qual dor? o que faço?). Depois uma rodada obrigatória: corrija as três maiores divergências de composição/hierarquia, depois detalhes (estados, foco, reduced motion). Registre o que mudou. | Capturas antes/depois no STATUS | 15 min |
 
 Não há passo 7 sem 5 e 6. Se o tempo apertar, encurte cada passo — não pule.
 

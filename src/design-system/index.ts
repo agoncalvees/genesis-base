@@ -32,6 +32,12 @@ export {
 	formatBytes,
 	validateFiles,
 } from "./patterns/file-drop";
+export {
+	type PitchStep,
+	PitchTour,
+	type PitchTourProps,
+	usePitchMode,
+} from "./patterns/pitch-tour";
 export { Button, type ButtonProps, IconButton } from "./primitives/button";
 export { Badge, Progress, Skeleton, Spinner } from "./primitives/feedback";
 export { Field, Input, Textarea } from "./primitives/field";

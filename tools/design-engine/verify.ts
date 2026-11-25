@@ -93,6 +93,26 @@ export async function verify(argv: string[]) {
 				if (!loaded.includes(family))
 					issues.push(`${width}px: fonte declarada não carregada: ${family}`);
 
+			for (const selector of spec.firstViewport ?? []) {
+				const visible = await page.evaluate((query) => {
+					const element = document.querySelector(query);
+					if (!element) return "ausente";
+					const box = element.getBoundingClientRect();
+					const style = getComputedStyle(element);
+					if (
+						style.visibility === "hidden" ||
+						style.display === "none" ||
+						box.height === 0
+					)
+						return "invisível";
+					return box.top >= 0 && box.bottom <= window.innerHeight
+						? "ok"
+						: `fora da primeira dobra (topo ${Math.round(box.top)}px, base ${Math.round(box.bottom)}px, janela ${window.innerHeight}px)`;
+				}, selector);
+				if (visible !== "ok")
+					issues.push(`${width}px: primeira tela sem ${selector}: ${visible}`);
+			}
+
 			const overflow = await page.evaluate(
 				() => document.documentElement.scrollWidth - window.innerWidth,
 			);

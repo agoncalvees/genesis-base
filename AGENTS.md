@@ -7,6 +7,7 @@ Leia [STATUS](docs/STATUS.md) (checkpoint mais recente) e só os guias da tarefa
 
 | Tarefa | Leia |
 |---|---|
+| Dor, critérios de julgamento, estrutura do app, pitch de 3 min | [PITCH-PROTOCOL](docs/product/PITCH-PROTOCOL.md) |
 | Interpretar o tema, direção de arte, referências, assets, Figma | [CREATIVE-DIRECTION](docs/design/CREATIVE-DIRECTION.md) |
 | Escrever o DESIGN.md | [DESIGN-TEMPLATE](docs/design/DESIGN-TEMPLATE.md), [DESIGN-ENGINE](docs/design/DESIGN-ENGINE.md) |
 | Iniciar um produto | [NEW-PRODUCT](docs/NEW-PRODUCT.md) |
@@ -18,9 +19,10 @@ Leia [STATUS](docs/STATUS.md) (checkpoint mais recente) e só os guias da tarefa
 ## Fluxo de um tema novo
 1. Confirme as regras do evento. Preencha `CHALLENGE.md` e `PRODUCT-BRIEF.md`.
 2. `bun run new -- --name "<Nome>" --slug <slug> --dir <abs> [--with ai,dataviz]`. Trabalhe no produto; o domínio fica nele.
-3. **Protocolo de direção artística** (obrigatório, curto): problema e público → mecanismo tecnológico central → até 3 referências concretas → direção artística → conceito visual da tela principal → `design/DESIGN.md` + `design/fidelity.json` → implementação → `design:verify` e comparação com o conceito → uma rodada de refinamento antes de entregar.
-4. A direção escolhe os componentes. O exemplo `design/examples/aceiro/` mostra o nível esperado, não uma estética a copiar. Não imponha uma estética universal; a identidade é original e adequada ao público e ao contexto cultural.
-5. Construa primeiro o momento-assinatura onde o mecanismo aparece funcionando. Uma tela excepcional vale mais que várias medianas.
+3. **Produto e pitch primeiro** ([PITCH-PROTOCOL](docs/product/PITCH-PROTOCOL.md)): quem sofre, dor com número, one-liner, critérios de julgamento → evidência na tela, roteiro de 3 min. O jurado não explora o app: a primeira tela mostra dor, promessa e ação; `?demo=1` conta a história em ≤ 60 s com `PitchTour`.
+4. **Protocolo de direção artística** (obrigatório, curto): mecanismo tecnológico central → até 3 referências concretas → direção artística → conceito visual da tela principal → `design/DESIGN.md` + `design/fidelity.json` → implementação → `design:verify` e comparação com o conceito → teste dos 5 segundos → uma rodada de refinamento antes de entregar.
+5. A direção escolhe os componentes. O exemplo `design/examples/aceiro/` mostra o nível esperado, não uma estética a copiar. Não imponha uma estética universal; a identidade é original e adequada ao público e ao contexto cultural.
+6. Construa primeiro a abertura e o momento-assinatura onde o mecanismo aparece funcionando; depois a demonstração guiada; por último a exploração livre. Uma tela excepcional que se explica sozinha vale mais que várias medianas.
 
 ## Execução
 - Registre em poucas linhas objetivo, arquivos sob sua responsabilidade e critérios de aceitação. Exceções exigem aprovação humana.
